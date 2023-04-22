@@ -1,13 +1,7 @@
-import {
-  View,
-  Text,
-  SafeAreaView,
-  TouchableOpacity,
-  ScrollView,
-} from "react-native";
-import { NavigationIProps } from "../utils/interface";
-import { useNavigation } from "@react-navigation/native";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
+import { ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { NavigationIProps } from "../utils/interface";
 
 const PaywallScreen = () => {
   const navigation = useNavigation<NavigationIProps>();
