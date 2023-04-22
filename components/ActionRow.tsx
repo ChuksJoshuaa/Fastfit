@@ -1,6 +1,7 @@
-import { TouchableOpacity, Text } from "react-native";
-import { IIProps } from "../utils/interface";
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
+import { Text, TouchableOpacity } from "react-native";
+import { IIProps, NavigationIProps } from "../utils/interface";
 
 const ActionRow = ({
   title,
@@ -10,9 +11,14 @@ const ActionRow = ({
   vertical,
   icon,
 }: IIProps) => {
+  const navigation = useNavigation<NavigationIProps>();
+
+  const handlePress = () => navigation.navigate(screen);
+
   return (
     <TouchableOpacity
-      className={`flex flex-1 justify-center items-center py-6 rounded-lg space-x-2 ${
+      onPress={handlePress}
+      className={`flex flex-1 m-2 justify-center items-center py-6 rounded-lg space-x-2 ${
         vertical ? "flex-col" : "flex-row"
       }`}
       style={{ backgroundColor: color }}
